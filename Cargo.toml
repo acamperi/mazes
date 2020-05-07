@@ -1,0 +1,11 @@
+[package]
+name = "mazes"
+version = "0.1.0"
+authors = ["Ariel Camperi <ariel.camperi@gmail.com>"]
+edition = "2018"
+
+
+[dependencies]
+partitions = "0.2.4"
+rand = "0.7.3"
+
