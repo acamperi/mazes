@@ -1,4 +1,4 @@
-use crate::maze::{Coordinates, Maze, Wall, WallDirection};
+use crate::maze::{Coordinates, Maze, Wall};
 use rand::seq::SliceRandom;
 use rand::{thread_rng, Rng};
 use std::collections::HashSet;
