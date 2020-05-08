@@ -77,7 +77,7 @@ pub fn print(maze: &Maze) {
                 horizontals += &empty_column;
             }
             match (has_up, has_left, has_right, has_down) {
-                (true, false, false, false) => horizontals += " ", // TODO partial up dash
+                (true, false, false, false) => horizontals += "\u{2575}",
                 (true, true, false, false) => horizontals += "\u{2518}",
                 (true, true, true, false) => horizontals += "\u{2534}",
                 (true, true, true, true) => horizontals += "\u{253c}",
@@ -85,13 +85,13 @@ pub fn print(maze: &Maze) {
                 (true, false, true, true) => horizontals += "\u{251c}",
                 (true, false, true, false) => horizontals += "\u{2514}",
                 (true, false, false, true) => horizontals += "\u{2502}",
-                (false, true, false, false) => horizontals += " ", // TODO partial left dash
+                (false, true, false, false) => horizontals += "\u{2574}",
                 (false, true, true, false) => horizontals += "\u{2500}",
                 (false, true, true, true) => horizontals += "\u{252c}",
                 (false, true, false, true) => horizontals += "\u{2510}",
-                (false, false, true, false) => horizontals += " ", // TODO partial right dash
+                (false, false, true, false) => horizontals += "\u{2576}",
                 (false, false, true, true) => horizontals += "\u{250c}",
-                (false, false, false, true) => horizontals += " ", // TODO partial down dash
+                (false, false, false, true) => horizontals += "\u{2577}",
                 (false, false, false, false) => horizontals += " ",
             }
         }
