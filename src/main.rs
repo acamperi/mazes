@@ -1,7 +1,5 @@
-use mazes::print::print;
-use mazes::{kruskal, prim};
+use mazes::cli;
 
 fn main() {
-    let maze = prim::generate(20, 20);
-    print(&maze);
+    cli::parse_args_and_run();
 }

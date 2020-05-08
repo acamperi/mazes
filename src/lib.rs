@@ -1,3 +1,5 @@
+pub mod cli;
+pub mod generator;
 pub mod kruskal;
 pub mod maze;
 pub mod prim;
