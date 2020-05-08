@@ -16,8 +16,8 @@ pub fn generate(height: usize, width: usize) -> Maze {
     random_walls.shuffle(&mut thread_rng());
     for wall in random_walls {
         let (first_cell, second_cell) = wall.adjoining_cells();
-        let first_index = first_cell.row * height + first_cell.column;
-        let second_index = second_cell.row * height + second_cell.column;
+        let first_index = first_cell.row * width + first_cell.column;
+        let second_index = second_cell.row * width + second_cell.column;
         if !sets.same_set(first_index, second_index) {
             maze.walls.remove(&wall);
             sets.union(first_index, second_index);

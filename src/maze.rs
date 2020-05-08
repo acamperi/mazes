@@ -80,8 +80,8 @@ impl Maze {
             }
         }
         Maze {
-            width,
             height,
+            width,
             walls,
         }
     }
