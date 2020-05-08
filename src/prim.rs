@@ -12,18 +12,7 @@ pub fn generate(height: usize, width: usize) -> Maze {
     };
     let mut visited_cells: HashSet<Coordinates> = HashSet::new();
     visited_cells.insert(start_cell);
-    let mut wall_list: Vec<Wall> = vec![
-        Wall {
-            row: start_cell.row,
-            column: start_cell.column,
-            direction: WallDirection::Right,
-        },
-        Wall {
-            row: start_cell.row,
-            column: start_cell.column,
-            direction: WallDirection::Down,
-        },
-    ];
+    let mut wall_list: Vec<Wall> = maze.adjoining_walls(start_cell);
     while let Some(wall) = wall_list.choose(&mut rng).cloned() {
         let adjoining_cells = wall.adjoining_cells();
         let unvisited_cell = if !visited_cells.contains(&adjoining_cells.0) {

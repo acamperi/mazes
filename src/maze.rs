@@ -111,7 +111,7 @@ impl Maze {
             }
         }
         // right
-        if cell.row < self.height - 2 {
+        if cell.column < self.width - 1 {
             let right = Wall {
                 row: cell.row,
                 column: cell.column,
@@ -122,7 +122,7 @@ impl Maze {
             }
         }
         // down
-        if cell.column < self.width - 2 {
+        if cell.row < self.height - 1 {
             let down = Wall {
                 row: cell.row,
                 column: cell.column,
