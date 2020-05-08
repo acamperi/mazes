@@ -1,5 +1,5 @@
+use crate::algorithms::{kruskal, prim};
 use crate::maze::Maze;
-use crate::{kruskal, prim};
 use clap::arg_enum;
 
 arg_enum! {
