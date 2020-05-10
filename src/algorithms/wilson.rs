@@ -7,10 +7,9 @@ pub fn generate(height: usize, width: usize) -> Maze {
     let mut maze = Maze::empty(height, width);
     let mut rng = thread_rng();
     let mut visited_cells: HashSet<Coordinates> = HashSet::new();
-    let mut walls: HashSet<Wall> = HashSet::new();
     let initial_cell = maze.random_cell(&mut rng);
     for wall in maze.adjoining_walls(&initial_cell, None) {
-        walls.insert(wall);
+        maze.walls.insert(wall);
     }
     visited_cells.insert(initial_cell);
     while visited_cells.len() < height * width {
@@ -25,11 +24,10 @@ pub fn generate(height: usize, width: usize) -> Maze {
             visited_cells.insert(cell);
         }
         for wall in new_walls {
-            walls.insert(wall);
+            maze.walls.insert(wall);
         }
-        walls.remove(&removed_wall);
+        maze.walls.remove(&removed_wall);
     }
-    maze.walls = walls;
     maze
 }
 
